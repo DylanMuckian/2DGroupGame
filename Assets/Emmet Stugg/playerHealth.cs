@@ -27,7 +27,8 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         Debug.Log(health);
-        healthbar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
+        Debug.Log("Heathbar needed");
+        //healthbar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
         if (health > maxHealth) health = maxHealth;
     }
 
