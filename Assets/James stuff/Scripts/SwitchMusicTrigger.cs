@@ -26,7 +26,7 @@ public class SwitchMusicTrigger : MonoBehaviour
       if(other.tag == "Player")
         {
             if(newTrack != null)
-            theAM.ChangeBGM(newTrack);
+                theAM.ChangeBGM(newTrack);
         }
     
     }
