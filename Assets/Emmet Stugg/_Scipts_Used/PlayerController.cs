@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
@@ -40,30 +41,33 @@ public class PlayerController : MonoBehaviour
                 if (!success)
                 {
                     success = TryMove(new Vector2(movementInput.x, 0));
+                    
                 }
 
                 if (!success)
                 {
                     success = TryMove(new Vector2(0, movementInput.y));
+                    
                 }
-
-                //animator.SetBool("isMoving", success);
+                animator.SetFloat("X", movementInput.x);
+                animator.SetBool("IsMoving", success);
+                animator.SetFloat("Y", movementInput.y);
             }
             else
             {
-                //animator.SetBool("isMoving", false);
+                animator.SetBool("IsMoving", false);
             }
 
             // This is to set the direction of which the palyer is looking while moving about.
             if (movementInput.x < 0)
             {
                 //Animator.SetBool("lookingLeft");
-                spriteRenderer.flipX = true;
+                //spriteRenderer.flipX = true;
             }
             else if (movementInput.x > 0)
             {
                 //Animator.SetbOOL("lookingRight";
-                spriteRenderer.flipX = false;
+                //spriteRenderer.flipX = false;
             } 
             //else if (movementInput.y < 0){
             //Animator.SetBool("lookingUp");
