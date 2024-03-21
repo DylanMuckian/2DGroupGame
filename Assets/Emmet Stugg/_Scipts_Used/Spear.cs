@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Spear : MonoBehaviour
 {
-    [Range(1, 10)]
+    
+    [Range(0, 10)]
     [SerializeField] private float speed = 10f;
 
-    [Range(1, 10)]
+    [Range(0, 10)]
     [SerializeField] private float lifeTime = 3f;
 
     private Rigidbody2D rb;
@@ -25,5 +26,8 @@ public class Spear : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
