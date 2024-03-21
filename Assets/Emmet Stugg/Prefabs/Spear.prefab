@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4820857758378648461}
   - component: {fileID: 2595678828824373979}
   - component: {fileID: 1444622212451764536}
+  - component: {fileID: 6264919359609291161}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Enemy
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 1.12
+--- !u!114 &6264919359609291161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000762331861117770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f0685df5dd46444becde7b181c0da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
