@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectVisibiltyToggle : MonoBehaviour
 {
     public GameObject objectToToggle;
-    public float toggleDistance = 3f;
+    public float toggleDistance = 8f;
     private bool objectVisible = false;
 
     private void Start()
@@ -16,6 +16,7 @@ public class ObjectVisibiltyToggle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+           // Debug.Log("e pressed");
             ToggleObjectVisibility();
         }
     }
@@ -24,12 +25,16 @@ public class ObjectVisibiltyToggle : MonoBehaviour
     {
         if (!objectVisible)
         {
+           // Debug.Log("not visible");
             Vector3 playerPosition = transform.position;
-            Vector3 objectPosition = objectToToggle.transform.localPosition;
+            Vector3 objectPosition = objectToToggle.transform.position;
             float distance = Vector3.Distance(playerPosition, objectPosition);
 
-            if (distance < toggleDistance) 
+            Debug.Log("distance: "+ distance);
+
+            if (distance <= toggleDistance) 
             {
+                //Debug.Log("in distance");
                 //sets the mini game to be visible
                 objectVisible = true;
                 objectToToggle.SetActive(true);
