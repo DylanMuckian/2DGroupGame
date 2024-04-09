@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Mirror
   - MirrorEnd
+  - MiniGame
   layers:
   - Default
   - TransparentFX

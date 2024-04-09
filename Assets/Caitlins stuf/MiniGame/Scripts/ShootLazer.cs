@@ -7,11 +7,28 @@ public class ShootLazer : MonoBehaviour
 {
     public Material material;
     LazerBeam beam;
+    private bool miniGameFinish;
 
+    public void Start()
+    {
+        miniGameFinish = false;
+    }
     void Update()
     {
         //game object destroyed so that it isnt created every update
-        Destroy(GameObject.Find("Laser Beam"));
-        beam = new LazerBeam(gameObject.transform.position, gameObject.transform.right, material);
+        if (!miniGameFinish)
+        {
+            Destroy(GameObject.Find("Laser Beam"));
+            beam = new LazerBeam(gameObject.transform.position, gameObject.transform.right, material);
+        }
+
+        else
+        {
+            Destroy(GameObject.Find("Laser Beam"));
+        }
+    }
+    public void miniGameFinished()
+    {
+        miniGameFinish=true;
     }
 }

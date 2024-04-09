@@ -11,7 +11,8 @@ public class Test : MonoBehaviour
      //   if (hitInfo.collider.gameObject.tag == "MirrorEnd")
         //Laser hits final mirror
         {
-          //  Destroy(door);
+            // Destroy (gameObject);
+            //destroy (Door);
             //destroy door
             //destroy mini game
         }

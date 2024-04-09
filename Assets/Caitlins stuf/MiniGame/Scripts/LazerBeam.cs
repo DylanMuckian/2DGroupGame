@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
-public class LazerBeam
+public class LazerBeam : MonoBehaviour
 {
     Vector3 pos, dir;
-
+    private GameObject laserObject;
     GameObject laserObj;
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
+
+    public void Start()
+    {
+        laserObject = GameObject.Find("Laser");
+    }
     public LazerBeam(Vector3 pos, Vector3 dir, Material material)
     {
         this.laser = new LineRenderer();
@@ -30,8 +37,8 @@ public class LazerBeam
 
     void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
     {
-         laserIndices.Add(pos);
-       
+        laserIndices.Add(pos);
+
 
         Ray ray = new Ray(pos, dir);
         RaycastHit hit;
@@ -41,7 +48,7 @@ public class LazerBeam
         {
             CheckHit(hit, dir, laser);
         }
-        else 
+        else
         //add 30 units along the ray to the lazer indices list.
         {
             laserIndices.Add(ray.GetPoint(30));
@@ -66,7 +73,7 @@ public class LazerBeam
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
     {
         Debug.Log("Hit" + hitInfo.collider.gameObject.name);
-        
+
         if (hitInfo.collider.gameObject.tag == "Mirror")
         {
             Vector3 pos = hitInfo.point;
@@ -79,12 +86,19 @@ public class LazerBeam
             laserIndices.Add(hitInfo.point);
             updateLaser();
         }
-        
+
         //if the ray hits the end point it opens the door
         if (hitInfo.collider.gameObject.tag == "MirrorEnd")
         {
+            Destroy(GameObject.Find("Door"));
+            Destroy(GameObject.Find("MiniGame"));
+            // Destroy(GameObject.Find("laserBeam"));
+            laserIndices.Remove(pos);
             //send the message to open the door from here...
             Debug.Log("Hit the end point: OPEN THE DOOR");
+
+           laserObject.GetComponent<ShootLazer>().miniGameFinished();
         }
     }
 }
+
