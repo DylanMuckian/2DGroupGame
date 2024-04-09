@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public string[] dialogue;
     private int index;
 
+    public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
     
@@ -26,6 +27,10 @@ public class Dialogue : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
+        }
+        if(dialogueText.text == dialogue[index])
+        {
+            contButton.SetActive(true);
         }
     }
 
@@ -47,8 +52,12 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
+
+        contButton.SetActive(false);
+
         if(index < dialogue.Length)
         {
+            Debug.Log(index);
             index++;
             dialogueText.text = "";
             StartCoroutine(Typing());
@@ -56,6 +65,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             zeroText();
+            dialoguePanel.SetActive(false);
         }
     }
 
@@ -64,6 +74,8 @@ public class Dialogue : MonoBehaviour
       if (other.CompareTag("Player"))
         {
             playerIsClose = true;
+            dialoguePanel.SetActive(true);
+            StartCoroutine(Typing());
         }
     }
     private void OnTriggerExit2D(Collider2D other)
