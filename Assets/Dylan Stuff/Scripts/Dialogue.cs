@@ -8,7 +8,7 @@ public class Dialogue : MonoBehaviour
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
-    private int index;
+    public int index;
 
     public GameObject contButton;
     public float wordSpeed;
@@ -25,13 +25,15 @@ public class Dialogue : MonoBehaviour
             else
             {
                 dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                //StartCoroutine(Typing());
             }
         }
-        if(dialogueText.text == dialogue[index])
-        {
-            contButton.SetActive(true);
-        }
+        
+        //note: this is comparing a string to an int - this will never be true??
+        // if(dialogueText.text == dialogue[index])
+        // {
+        //     contButton.SetActive(true);
+        // }
     }
 
     public void zeroText()
@@ -52,21 +54,27 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
-
-        contButton.SetActive(false);
-
-        if(index < dialogue.Length)
+        //note: changed the conditions to length minus one
+        if(index < dialogue.Length-1)
         {
-            Debug.Log(index);
             index++;
             dialogueText.text = "";
             StartCoroutine(Typing());
         }
-        else
+        else if(index == dialogue.Length-1)
         {
             zeroText();
             dialoguePanel.SetActive(false);
+            contButton.SetActive(false);
         }
+        
+        
+        // else
+        // {
+        //     zeroText();
+        //     dialoguePanel.SetActive(false);
+        //     contButton.SetActive(false);
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
