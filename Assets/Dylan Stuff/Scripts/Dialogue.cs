@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose &&)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
             if (dialoguePanel.activeInHierarchy)
             {
