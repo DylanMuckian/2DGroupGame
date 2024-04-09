@@ -65,8 +65,9 @@ public class LazerBeam
 
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
     {
+        Debug.Log("Hit" + hitInfo.collider.gameObject.name);
+        
         if (hitInfo.collider.gameObject.tag == "Mirror")
-
         {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
@@ -77,6 +78,13 @@ public class LazerBeam
         {
             laserIndices.Add(hitInfo.point);
             updateLaser();
+        }
+        
+        //if the ray hits the end point it opens the door
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd")
+        {
+            //send the message to open the door from here...
+            Debug.Log("Hit the end point: OPEN THE DOOR");
         }
     }
 }
