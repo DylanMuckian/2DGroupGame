@@ -8,10 +8,10 @@ public class Test : MonoBehaviour
     void Update()
     {
 
-        if (hitInfo.collider.gameObject.tag == "MirrorEnd")
+     //   if (hitInfo.collider.gameObject.tag == "MirrorEnd")
         //Laser hits final mirror
         {
-            Destroy(door);
+          //  Destroy(door);
             //destroy door
             //destroy mini game
         }
