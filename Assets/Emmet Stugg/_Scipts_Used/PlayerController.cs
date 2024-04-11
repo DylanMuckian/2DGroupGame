@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
@@ -144,6 +145,8 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+    //cant dash untill obtained the amulet item.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Amulet"))
