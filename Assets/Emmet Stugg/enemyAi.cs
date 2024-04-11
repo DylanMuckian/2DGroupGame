@@ -16,7 +16,7 @@ public class aiMove : MonoBehaviour
 
     private Transform target;
     private Rigidbody2D rb;
-    //private Animator anim;
+    private Animator anim;
     private Vector2 movement;
     public Vector3 dir;
 
@@ -26,13 +26,13 @@ public class aiMove : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
     }
     private void Update()
     {
-        //anim.SetBool("isRunning", isinChaseRange);
-
+        anim.SetBool("isRunning", isinChaseRange);
+       
         isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
         isinAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatisPlayer);
 
@@ -55,6 +55,7 @@ public class aiMove : MonoBehaviour
     {
         if (isinChaseRange && !isinAttackRange)
         {
+           
             MoveChracter(movement);
         }
         if (isinAttackRange)

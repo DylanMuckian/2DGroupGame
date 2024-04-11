@@ -7,7 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
+    public float moveSpeed;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
    
@@ -20,12 +20,47 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+
+
+    public float activeMovespeed;
+    public float dashSpeed;
+
+    public float dashLength = 0.5f, dashCooldown = 1.0f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        activeMovespeed = moveSpeed;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(dashCoolCounter <=0 && dashCounter <= 0)
+            {
+                activeMovespeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+        if(dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if(dashCounter <= 0)
+            {
+                activeMovespeed = moveSpeed;
+                dashCoolCounter = dashLength;
+            }
+        }
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -58,26 +93,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("IsMoving", false);
             }
 
-            // This is to set the direction of which the palyer is looking while moving about.
-            if (movementInput.x < 0)
-            {
-                //Animator.SetBool("lookingLeft");
-                //spriteRenderer.flipX = true;
-            }
-            else if (movementInput.x > 0)
-            {
-                //Animator.SetbOOL("lookingRight";
-                //spriteRenderer.flipX = false;
-            } 
-            //else if (movementInput.y < 0){
-            //Animator.SetBool("lookingUp");
-              //spriteRenderer.flipY = true;}
-              //else if (movementInput.y > 0)
-            //{
-                //Animator.SetBool("lookingDown")
-               // spriteRenderer.flipY = false;
-            //}
-
+ 
         }
     }
 
@@ -90,11 +106,11 @@ public class PlayerController : MonoBehaviour
                 direction, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
                 movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
                 castCollisions, // List of collisions to store the found collisions into after the Cast is finished
-                moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
+                activeMovespeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
 
             if (count == 0)
             {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + direction * activeMovespeed * Time.fixedDeltaTime);
                 return true;
             }
             else

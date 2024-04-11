@@ -7,8 +7,14 @@ TagManager:
   - Weapon
   - Enemy
   - Mirror
+<<<<<<< Updated upstream
   - MirrorEnd
   - MiniGame
+=======
+  - Sword
+  - Club
+  - Spear
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
