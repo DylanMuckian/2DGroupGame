@@ -25,18 +25,8 @@ public class WeaponChange : MonoBehaviour
     void Update()
     {
         //check to see if player has the weapong 
-        if (hasSword == false)
-        {
-            return;
-        }
-        if (hasClub == false)
-        {
-            return;
-        }
-        if (hasSpear == false)
-        {
-            return;
-        }
+       
+      
         
        if(Input.GetKeyDown(KeyCode.Alpha1)) 
         {
