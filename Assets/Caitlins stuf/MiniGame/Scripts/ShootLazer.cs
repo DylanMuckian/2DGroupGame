@@ -20,15 +20,21 @@ public class ShootLazer : MonoBehaviour
         {
             Destroy(GameObject.Find("Laser Beam"));
             beam = new LazerBeam(gameObject.transform.position, gameObject.transform.right, material);
+            Debug.Log("looping");
         }
 
         else
         {
-            Destroy(GameObject.Find("Laser Beam"));
+            Debug.Log("remove");
+            // beam.gameObject.SetActive(false);
+            // beam = Destroy(beam.gameObject);
+            //  Destroy(beam);
+          
         }
     }
     public void miniGameFinished()
     {
         miniGameFinish=true;
+        Debug.Log("Finished");
     }
 }

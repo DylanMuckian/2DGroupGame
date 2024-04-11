@@ -72,7 +72,7 @@ public class LazerBeam : MonoBehaviour
 
     void CheckHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
     {
-        Debug.Log("Hit" + hitInfo.collider.gameObject.name);
+      //  Debug.Log("Hit" + hitInfo.collider.gameObject.name);
 
         if (hitInfo.collider.gameObject.tag == "Mirror")
         {
@@ -90,14 +90,18 @@ public class LazerBeam : MonoBehaviour
         //if the ray hits the end point it opens the door
         if (hitInfo.collider.gameObject.tag == "MirrorEnd")
         {
+            Debug.Log("objectHit");
+            laserIndices.Remove(pos);
+           // laserObject.GetComponent<ShootLazer>().miniGameFinished();
             Destroy(GameObject.Find("Door"));
+            Destroy(this.laser);
             Destroy(GameObject.Find("MiniGame"));
             // Destroy(GameObject.Find("laserBeam"));
-            laserIndices.Remove(pos);
+         
             //send the message to open the door from here...
-            Debug.Log("Hit the end point: OPEN THE DOOR");
+           // Debug.Log("Hit the end point: OPEN THE DOOR");
 
-           laserObject.GetComponent<ShootLazer>().miniGameFinished();
+           
         }
     }
 }
