@@ -30,7 +30,7 @@ public class ObjectVisibiltyToggle : MonoBehaviour
             Vector3 objectPosition = objectToToggle.transform.position;
             float distance = Vector3.Distance(playerPosition, objectPosition);
 
-            Debug.Log("distance: "+ distance);
+        //    Debug.Log("distance: "+ distance);
 
             if (distance <= toggleDistance) 
             {
