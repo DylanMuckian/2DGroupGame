@@ -113,9 +113,9 @@ TextureImporter:
       name: AresFireAttack_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 11
         y: 2
-        width: 35
+        width: 47
         height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de073f3e64b570045b34f53c53d0560a
-      internalID: 786666763
+      spriteID: 4d6e41ace7e9843418aff05c7969cb29
+      internalID: -1725991872
       vertices: []
       indices: 
       edges: []
@@ -134,9 +134,9 @@ TextureImporter:
       name: AresFireAttack_1
       rect:
         serializedVersion: 2
-        x: 90
+        x: 81
         y: 2
-        width: 36
+        width: 47
         height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e479a14807a97a645b159aaf7a9a9e79
-      internalID: 1544812056
+      spriteID: d5045c0b0a94809478d745630471508e
+      internalID: 1327806618
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
         serializedVersion: 2
         x: 149
         y: 1
-        width: 45
+        width: 49
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1568608a10302eb4b86f813cb329e584
-      internalID: 1943949440
+      spriteID: 4f976c18365810f4e8839e8f2bc93388
+      internalID: 450136931
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AresFireAttack_0: 786666763
-      AresFireAttack_1: 1544812056
-      AresFireAttack_2: 1943949440
+      AresFireAttack_0: -1725991872
+      AresFireAttack_1: 1327806618
+      AresFireAttack_2: 450136931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
