@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
             if (health <= 0)
             {
                 Defeated();
-                RemoveEnemy();
+                
             }
         }
         get
@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
+        
     }
 
     public void RemoveEnemy()

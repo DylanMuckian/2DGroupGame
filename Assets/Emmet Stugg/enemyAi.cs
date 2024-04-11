@@ -32,7 +32,7 @@ public class aiMove : MonoBehaviour
     private void Update()
     {
         anim.SetBool("isRunning", isinChaseRange);
-       
+        anim.SetBool("Attacking", isinAttackRange);
         isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
         isinAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatisPlayer);
 

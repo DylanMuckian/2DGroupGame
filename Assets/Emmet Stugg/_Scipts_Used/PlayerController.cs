@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public float dashLength = 0.5f, dashCooldown = 1.0f;
-
+    private bool canDash = false;
     private float dashCounter;
     private float dashCoolCounter;
     // Start is called before the first frame update
@@ -39,12 +39,15 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canDash == true) 
         {
-            if(dashCoolCounter <=0 && dashCounter <= 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+               if(dashCoolCounter <=0 && dashCounter <= 0)
+               {
                 activeMovespeed = dashSpeed;
                 dashCounter = dashLength;
+               }
             }
         }
         if(dashCounter > 0)
@@ -61,8 +64,9 @@ public class PlayerController : MonoBehaviour
         {
             dashCoolCounter -= Time.deltaTime;
         }
+        
     }
-
+       
     private void FixedUpdate()
     {
         if (canMove)
@@ -139,5 +143,12 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Amulet"))
+        {
+            canDash = true;
+        }
     }
 }
