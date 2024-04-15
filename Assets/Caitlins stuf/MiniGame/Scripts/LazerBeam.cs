@@ -96,13 +96,20 @@ public class LazerBeam : MonoBehaviour
             Destroy(GameObject.Find("Door"));
             Destroy(this.laser);
             Destroy(GameObject.Find("MiniGame"));
-            // Destroy(GameObject.Find("laserBeam"));
-         
-            //send the message to open the door from here...
-           // Debug.Log("Hit the end point: OPEN THE DOOR");
-
-           
+   
         }
+
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd2")
+        {
+            Debug.Log("objectHit");
+            laserIndices.Remove(pos);
+            // laserObject.GetComponent<ShootLazer>().miniGameFinished();
+            Destroy(GameObject.Find("Door2"));
+            Destroy(this.laser);
+            Destroy(GameObject.Find("MiniGame2"));
+     
+        }
+
     }
 }
 
