@@ -11,8 +11,8 @@ public class MenuController : MonoBehaviour
     [Header("Volume Settings")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider  volumeSlider = null;
-
     [SerializeField] private GameObject confirmationPromt = null;
+    [SerializeField] private float defaultVolume = 1.0f;
 
     [Header("Levels To Load")]
     public string Gameplay;
@@ -60,3 +60,5 @@ public class MenuController : MonoBehaviour
         confirmationPromt.SetActive(false);
     }
 }
+
+//35:00 into video (need to fix volume)

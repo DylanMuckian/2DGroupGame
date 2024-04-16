@@ -4,17 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Club
   - Weapon
   - Sword
-  - Enemy
-  - Spear
-  - Amulet
+  - MiniGame
+  - Mirror
+  - MirrorEnd
+<<<<<<< Updated upstream
+  - MirrorEnd2
+  - MirrorEnd3
+=======
+  - MiniGame
+  - MirrorEnd2
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
