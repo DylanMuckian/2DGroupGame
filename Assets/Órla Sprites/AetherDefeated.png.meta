@@ -113,10 +113,10 @@ TextureImporter:
       name: AetherDefeated_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 54
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac551ec43f5df0a459d75662619a0c25
-      internalID: -1064585506
+      spriteID: a8e81655e2b7d534691a374af8291d66
+      internalID: -1029042387
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: AetherDefeated_1
       rect:
         serializedVersion: 2
-        x: 69
+        x: 64
         y: 0
-        width: 54
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b7edba612fdce045a9f355c1125fee5
-      internalID: -941784571
+      spriteID: c839e119e842d2241814060208b3df9b
+      internalID: -948470545
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: AetherDefeated_2
       rect:
         serializedVersion: 2
-        x: 133
+        x: 128
         y: 0
-        width: 54
-        height: 21
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18ba6e870978054459ce8be6947c131b
-      internalID: -299288651
+      spriteID: 882eb1ecc9294204b8dd5c6aeaa169f3
+      internalID: -1546806643
       vertices: []
       indices: 
       edges: []
@@ -176,10 +176,10 @@ TextureImporter:
       name: AetherDefeated_3
       rect:
         serializedVersion: 2
-        x: 197
+        x: 192
         y: 0
-        width: 54
-        height: 26
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eea9f19a58551d646812aed11549ce6e
-      internalID: 1380047724
+      spriteID: 6523972ef1f9cda4c9b2651b9289d9d5
+      internalID: -756643660
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       name: AetherDefeated_4
       rect:
         serializedVersion: 2
-        x: 261
+        x: 256
         y: 0
-        width: 54
-        height: 31
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000bf19081614444a96b5efb85b4ffea
-      internalID: -156182686
+      spriteID: 3f4ac216e728aa042989a63307193277
+      internalID: -494635989
       vertices: []
       indices: 
       edges: []
@@ -218,10 +218,10 @@ TextureImporter:
       name: AetherDefeated_5
       rect:
         serializedVersion: 2
-        x: 325
+        x: 320
         y: 0
-        width: 54
-        height: 26
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c86888e9b725b14b922e8b5a3e534da
-      internalID: -1284713507
+      spriteID: 5c0c7cc06c9f39e4190a3d372aeca31f
+      internalID: -5891424
       vertices: []
       indices: 
       edges: []
@@ -239,10 +239,10 @@ TextureImporter:
       name: AetherDefeated_6
       rect:
         serializedVersion: 2
-        x: 389
+        x: 384
         y: 0
-        width: 54
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878191706ff29034fb576553c5988112
-      internalID: 1704054857
+      spriteID: c4251cebf42ca1a4b92cc08041eb2bae
+      internalID: -1955769496
       vertices: []
       indices: 
       edges: []
@@ -260,10 +260,10 @@ TextureImporter:
       name: AetherDefeated_7
       rect:
         serializedVersion: 2
-        x: 453
+        x: 448
         y: 0
-        width: 54
-        height: 21
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef33ae11a9c28c548ab4d6aecfa65662
-      internalID: 654108264
+      spriteID: f4e140b19fb9807489698baa1014c31e
+      internalID: -1435285341
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AetherDefeated_0: -1064585506
-      AetherDefeated_1: -941784571
-      AetherDefeated_2: -299288651
-      AetherDefeated_3: 1380047724
-      AetherDefeated_4: -156182686
-      AetherDefeated_5: -1284713507
-      AetherDefeated_6: 1704054857
-      AetherDefeated_7: 654108264
+      AetherDefeated_0: -1029042387
+      AetherDefeated_1: -948470545
+      AetherDefeated_2: -1546806643
+      AetherDefeated_3: -756643660
+      AetherDefeated_4: -494635989
+      AetherDefeated_5: -5891424
+      AetherDefeated_6: -1955769496
+      AetherDefeated_7: -1435285341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
