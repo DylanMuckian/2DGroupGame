@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    bool canMove = true;
+    public bool canMove = true;
 
 
 

@@ -9,7 +9,13 @@ TagManager:
   - MiniGame
   - Mirror
   - MirrorEnd
+<<<<<<< Updated upstream
   - MirrorEnd2
+  - MirrorEnd3
+=======
+  - MiniGame
+  - MirrorEnd2
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
