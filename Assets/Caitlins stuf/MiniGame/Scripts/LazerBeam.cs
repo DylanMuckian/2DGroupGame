@@ -92,7 +92,8 @@ public class LazerBeam : MonoBehaviour
         {
          //Debug.Log("objectHit");
             laserIndices.Remove(pos);
-<<<<<<< Updated upstream
+
+
          // laserObject.GetComponent<ShootLazer>().miniGameFinished();
             Destroy(GameObject.Find("Door"));
             Destroy(this.laser);
@@ -119,7 +120,7 @@ public class LazerBeam : MonoBehaviour
             Destroy(this.laser);
             Destroy(GameObject.Find("MiniGame3"));
 
-=======
+
             // laserObject.GetComponent<ShootLazer>().miniGameFinished();
             Destroy(GameObject.Find("Door"));
             Destroy(this.laser);
@@ -137,7 +138,7 @@ public class LazerBeam : MonoBehaviour
             Destroy(GameObject.Find("MiniGame2"));
             // Destroy(GameObject.Find("laserBeam"));
 
->>>>>>> Stashed changes
+
         }
     }
 }
