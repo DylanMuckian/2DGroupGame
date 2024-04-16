@@ -9,7 +9,7 @@ using UnityEngine;
    // public LineRenderer m_lineRenderer;
    // Transform m_transfrom;
 
-   // private void Awake()
+   // private void Awake()s
     //{
        // m_transfrom = GetComponent<Transform>();
     //}
