@@ -8,7 +8,10 @@ public class Dialogue : MonoBehaviour
     /// <summary>
     /// setting to make dialog happen once or repeat
     /// </summary>
-    public bool oneShot = false; 
+    public bool oneShot = false;
+
+    AetherRunScript AS;
+    PlayerController playerController;
 
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -89,21 +92,29 @@ public class Dialogue : MonoBehaviour
         // }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
       if (other.CompareTag("Player"))
         {
             playerIsClose = true;
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
+            AS.canMove = false;
+            playerController.LockMovement();
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
             zeroText();
+            AS.canMove = true;
+            playerController.UnlockMovement();
         }
     }
+    
+    
+    
+
 }
