@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public bool hasTriggered = false;
-    public bool oneShot = false;
+    /// <summary>
+    /// setting to make dialog happen once or repeat
+    /// </summary>
+    public bool oneShot = false; 
+
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
@@ -16,7 +19,7 @@ public class Dialogue : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
     
-    void Update()
+    void Update()  
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
@@ -36,14 +39,6 @@ public class Dialogue : MonoBehaviour
         // {
         //     contButton.SetActive(true);
         // }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && !hasTriggered)
-        {
-            hasTriggered = true;
-        }
     }
 
     public void zeroText()
@@ -79,6 +74,8 @@ public class Dialogue : MonoBehaviour
             if (oneShot)
             {
                 //Destroy or remove 
+                print("Destroy dialog if oneshot");
+                Destroy(this.gameObject);
 
             }
         }
