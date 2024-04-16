@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Amulet"))
         {
             canDash = true;
+            Destroy(gameObject);
         }
     }
 }
