@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
         
     }
        
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if (canMove)
         {
@@ -101,7 +102,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool TryMove(Vector2 direction)
+    public bool TryMove(Vector2 direction)
     {
         if (direction != Vector2.zero)
         {
@@ -144,11 +145,14 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+    //cant dash untill obtained the amulet item.
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Amulet"))
         {
             canDash = true;
+            Destroy(gameObject);
         }
     }
 }

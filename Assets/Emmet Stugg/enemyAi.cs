@@ -63,7 +63,7 @@ public class aiMove : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
+   
     private void MoveChracter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));

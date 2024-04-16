@@ -90,18 +90,55 @@ public class LazerBeam : MonoBehaviour
         //if the ray hits the end point it opens the door
         if (hitInfo.collider.gameObject.tag == "MirrorEnd")
         {
-            Debug.Log("objectHit");
+         //Debug.Log("objectHit");
             laserIndices.Remove(pos);
-           // laserObject.GetComponent<ShootLazer>().miniGameFinished();
+
+
+         // laserObject.GetComponent<ShootLazer>().miniGameFinished();
+            Destroy(GameObject.Find("Door"));
+            Destroy(this.laser);
+            Destroy(GameObject.Find("MiniGame"));
+   
+        }
+
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd2")
+        {
+         // Debug.Log("objectHit");
+            laserIndices.Remove(pos);
+         //laserObject.GetComponent<ShootLazer>().miniGameFinished();
+            Destroy(GameObject.Find("Door2"));
+            Destroy(this.laser);
+            Destroy(GameObject.Find("MiniGame2"));
+     
+        }
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd3")
+        {
+         //Debug.Log("objectHit");
+            laserIndices.Remove(pos);
+         //laserObject.GetComponent<ShootLazer>().miniGameFinished();
+            Destroy(GameObject.Find("Door3"));
+            Destroy(this.laser);
+            Destroy(GameObject.Find("MiniGame3"));
+
+
+            // laserObject.GetComponent<ShootLazer>().miniGameFinished();
             Destroy(GameObject.Find("Door"));
             Destroy(this.laser);
             Destroy(GameObject.Find("MiniGame"));
             // Destroy(GameObject.Find("laserBeam"));
-         
-            //send the message to open the door from here...
-           // Debug.Log("Hit the end point: OPEN THE DOOR");
 
-           
+        }
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd2")
+        {
+            Debug.Log("objectHit");
+            laserIndices.Remove(pos);
+            // laserObject.GetComponent<ShootLazer>().miniGameFinished();
+            Destroy(GameObject.Find("Door2"));
+            Destroy(this.laser);
+            Destroy(GameObject.Find("MiniGame2"));
+            // Destroy(GameObject.Find("laserBeam"));
+
+
         }
     }
 }

@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public bool hasTriggered = false;
+    /// <summary>
+    /// setting to make dialog happen once or repeat
+    /// </summary>
     public bool oneShot = false;
+
+    AetherRunScript AS;
+    PlayerController playerController;
+
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
@@ -16,7 +22,7 @@ public class Dialogue : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
     
-    void Update()
+    void Update()  
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
@@ -36,14 +42,6 @@ public class Dialogue : MonoBehaviour
         // {
         //     contButton.SetActive(true);
         // }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && !hasTriggered)
-        {
-            hasTriggered = true;
-        }
     }
 
     public void zeroText()
@@ -79,6 +77,8 @@ public class Dialogue : MonoBehaviour
             if (oneShot)
             {
                 //Destroy or remove 
+                print("Destroy dialog if oneshot");
+                Destroy(this.gameObject);
 
             }
         }
@@ -92,21 +92,29 @@ public class Dialogue : MonoBehaviour
         // }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
       if (other.CompareTag("Player"))
         {
             playerIsClose = true;
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
+            AS.canMove = false;
+            playerController.LockMovement();
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
             zeroText();
+            AS.canMove = true;
+            playerController.UnlockMovement();
         }
     }
+    
+    
+    
+
 }
