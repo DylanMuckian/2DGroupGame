@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags: []
+=======
+  tags:
+  - Mirror
+  - MirrorEnd
+  - MiniGame
+  - Weapon
+  - Undefined
+  - EndMirror2
+  - MirrorEnd2
+  - Enemy
+  - MirrorEnd3
+  - MirrorEnd4
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
