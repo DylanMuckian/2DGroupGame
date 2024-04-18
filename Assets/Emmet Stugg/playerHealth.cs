@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     public float health = 100;
     public float maxHealth = 100;
     public Image healthbar;
+    public bool isDead;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,15 @@ public class PlayerHealth : MonoBehaviour
         
         healthbar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
         if (health > maxHealth) health = maxHealth;
+
+        if (health <= 0) 
+        {
+            animator.SetBool("IsDead", true);
+        }
+        else 
+        {
+            animator.SetBool("IsDead", false);
+        }
     }
 
 
