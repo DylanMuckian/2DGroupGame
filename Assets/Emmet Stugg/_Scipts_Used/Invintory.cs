@@ -14,6 +14,7 @@ public class WeaponChange : MonoBehaviour
     private bool hasClub = false;
     private bool hasSpear = false;
 
+    //public AudioClip collectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -53,10 +54,14 @@ public class WeaponChange : MonoBehaviour
         }
         
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sword")){
             hasSword = true;
+            //todo play collect sound
+            // AudioManager.instance.PlaySFX(collectSound);
+            // AudioManager.instance.PlaySFX("Collect");
             Destroy(other.gameObject);
         }
         if (other.CompareTag("Club"))
@@ -126,6 +131,8 @@ public class WeaponChange : MonoBehaviour
             Club.SetActive(false);
             Spear.SetActive(false);
         }
+        
+        AudioManager.instance.PlaySFX("WeaponChange");
     }
     
 }
