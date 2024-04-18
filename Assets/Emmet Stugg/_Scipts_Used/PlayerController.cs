@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    public bool canMove = true;
+    bool canMove = true;
 
 
 
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         
     }
        
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if (canMove)
         {
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool TryMove(Vector2 direction)
+    public bool TryMove(Vector2 direction)
     {
         if (direction != Vector2.zero)
         {
@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Amulet"))
         {
             canDash = true;
+            Destroy(gameObject);
         }
     }
 }

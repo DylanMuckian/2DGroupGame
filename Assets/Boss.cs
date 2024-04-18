@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    
+    // this scripts is to flip the sprite when player switchs sides of boss
     public float checkRadius;
     public float attackRadius;
 
