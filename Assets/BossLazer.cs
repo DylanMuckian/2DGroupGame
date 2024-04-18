@@ -14,17 +14,10 @@ using UnityEngine;
        // m_transfrom = GetComponent<Transform>();
     //}
 
-// Updated upstream
     //void ShootLazer()
    // {
        // if (Physic2D) ;
    // }
-
-    // void ShootLazer()
-   // {
-       // if (Physic2D);
-   // }
-//Stashed changes
     // Start is called before the first frame update
     //void Start()
    // {
