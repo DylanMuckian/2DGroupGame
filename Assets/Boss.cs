@@ -33,7 +33,6 @@ public class Boss : MonoBehaviour
     {
         anim.SetBool("canMove", isinChaseRange);
         anim.SetBool("Attacking", isinAttackRange);
-        anim.SetBool("SecondPhase", isinAttackRange);
         isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
         isinAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatisPlayer);
 
@@ -58,7 +57,6 @@ public class Boss : MonoBehaviour
         if (isinAttackRange)
         {
             rb.velocity = Vector2.zero;
-
         }
     }
 
