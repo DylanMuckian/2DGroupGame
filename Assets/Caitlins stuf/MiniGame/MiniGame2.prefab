@@ -1062,6 +1062,7 @@ MonoBehaviour:
   objectToToggle: {fileID: 0}
   objectToToggle2: {fileID: 0}
   objectToToggle3: {fileID: 0}
+  objectToToggle4: {fileID: 0}
   toggleDistance: 8
 --- !u!1 &7522725590773223752
 GameObject:
@@ -1078,7 +1079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6968420334539010773
 Transform:
   m_ObjectHideFlags: 0
