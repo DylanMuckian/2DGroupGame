@@ -3,12 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapon
+  - Mirror
+  - MirrorEnd4
+  - MiniGame
+  - Enemy
+  - MirrorEnd2
+  - MirrorEnd
+  - MirrorEnd3
+  - Club
+  - Sword
+  - Spear
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

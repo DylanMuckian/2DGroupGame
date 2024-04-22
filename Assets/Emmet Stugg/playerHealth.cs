@@ -16,13 +16,14 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 100;
     public Image healthbar;
     public bool isDead;
-    public Animator animator;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
