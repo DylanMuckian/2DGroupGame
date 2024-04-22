@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
         set
         {
             health = value;
+            if (health <= 250)
+            {
+                success = true;
+            }
 
             if (health <= 0)
             {
@@ -22,10 +26,12 @@ public class Enemy : MonoBehaviour
         {
             return health;
         }
+        
+        a
     }
 
     public float health = 1;
-
+   
 
     private void Start()
     {
