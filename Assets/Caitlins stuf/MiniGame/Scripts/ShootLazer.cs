@@ -26,9 +26,9 @@ public class ShootLazer : MonoBehaviour
         else
         {
             Debug.Log("remove");
-            // beam.gameObject.SetActive(false);
+            //beam.gameObject.SetActive(false);
             // beam = Destroy(beam.gameObject);
-            //  Destroy(beam);
+            //Destroy(beam);
           
         }
     }
