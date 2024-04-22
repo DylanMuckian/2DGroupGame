@@ -121,21 +121,21 @@ public class LazerBeam : MonoBehaviour
             Destroy(GameObject.Find("MiniGame3"));
 
 
-            // laserObject.GetComponent<ShootLazer>().miniGameFinished();
-            Destroy(GameObject.Find("Door"));
-            Destroy(this.laser);
-            Destroy(GameObject.Find("MiniGame"));
-            // Destroy(GameObject.Find("laserBeam"));
+             //laserObject.GetComponent<ShootLazer>().miniGameFinished();
+             //Destroy(GameObject.Find("Door"));
+             //Destroy(this.laser);
+             //Destroy(GameObject.Find("MiniGame"));
+             //Destroy(GameObject.Find("laserBeam"));
 
         }
-        if (hitInfo.collider.gameObject.tag == "MirrorEnd2")
+        if (hitInfo.collider.gameObject.tag == "MirrorEnd4")
         {
             Debug.Log("objectHit");
             laserIndices.Remove(pos);
             // laserObject.GetComponent<ShootLazer>().miniGameFinished();
-            Destroy(GameObject.Find("Door2"));
+            Destroy(GameObject.Find("Door4"));
             Destroy(this.laser);
-            Destroy(GameObject.Find("MiniGame2"));
+            Destroy(GameObject.Find("MiniGame4"));
             // Destroy(GameObject.Find("laserBeam"));
 
 

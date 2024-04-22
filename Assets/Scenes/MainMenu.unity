@@ -433,7 +433,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1699199178}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: SetVolume
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
