@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ObjectVisibiltyToggle : MonoBehaviour
 {
-    public GameObject objectToToggle, objectToToggle2, objectToToggle3;
+    public GameObject objectToToggle, objectToToggle2, objectToToggle3, objectToToggle4;
     public float toggleDistance = 8f;
     private bool objectVisible = false;
     private bool objectVisible2 = false;
     private bool objectVisible3 = false;
+    private bool objectVisible4 = false;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class ObjectVisibiltyToggle : MonoBehaviour
         objectToToggle.SetActive(false);
         objectToToggle2.SetActive(false);
         objectToToggle3.SetActive(false);
+        objectToToggle4.SetActive(false);
     }
 
     private void Update()
@@ -57,7 +59,7 @@ public class ObjectVisibiltyToggle : MonoBehaviour
 
             if (distance2 <= toggleDistance)
             {
-                Debug.Log("In Distance 2");
+                Debug.Log("In Distance 3");
                 objectVisible2 = true;
                 objectToToggle2.SetActive(true);
             }
@@ -75,6 +77,21 @@ public class ObjectVisibiltyToggle : MonoBehaviour
                 Debug.Log("In Distance 3");
                 objectVisible3 = true;
                 objectToToggle3.SetActive(true);
+            }
+        }
+
+        //mini game 4
+        if (!objectVisible4)
+        {
+            Vector3 objectPosition4 = objectToToggle4.transform.position;
+            Vector3 playerPosition = transform.position;
+            float distance3 = Vector3.Distance(playerPosition, objectPosition4);
+
+            if (distance3 <= toggleDistance)
+            {
+                Debug.Log("In Distance 3");
+                objectVisible4 = true;
+                objectToToggle4.SetActive(true);
             }
         }
 
