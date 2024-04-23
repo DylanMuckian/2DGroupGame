@@ -8,6 +8,8 @@ using static UnityEngine.Rendering.DebugUI;
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
     public float moveSpeed;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -31,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -154,9 +160,10 @@ public class PlayerController : MonoBehaviour
             canDash = true;
             Destroy(gameObject);
         }
-        if (other.CompareTag("Diologue"))
+        if (other.CompareTag("Dialogue"))
         {
             LockMovement();
+            animator.SetBool("IsMoving", false);
         }
     }
 }

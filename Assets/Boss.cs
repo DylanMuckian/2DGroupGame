@@ -57,15 +57,7 @@ public class Boss : MonoBehaviour
             AR.canMove = true;
         }
 
-        //if (isinAttackRange)
-       // {
-            //anim.SetBool("IsAttacking", true);
-
-       // }
-       // else
-       // {
-            //anim.SetBool("IsAttacking", false);
-       // }
+       
 
         
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,8 @@ public class _Dialogue : MonoBehaviour
     /// </summary>
     public bool oneShot = false;
 
-    AetherRunScript AS;
+    // AetherRunScript AS;
     
-
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
@@ -80,7 +80,7 @@ public class _Dialogue : MonoBehaviour
                 //Destroy or remove 
                 print("Destroy dialog if oneshot");
                 Destroy(this.gameObject);
-
+                DialogueComplete();
             }
         }
         
@@ -100,7 +100,7 @@ public class _Dialogue : MonoBehaviour
             playerIsClose = true;
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
-            AS.canMove = false;
+           // AS.canMove = false;
             
         }
     }
@@ -110,12 +110,17 @@ public class _Dialogue : MonoBehaviour
         {
             playerIsClose = false;
             zeroText();
-            AS.canMove = true;
+            //AS.canMove = true;
            
         }
     }
 
-    
+    private void DialogueComplete()
+    {
+        Debug.Log("Something");
+        PlayerController.Instance.UnlockMovement();
+
+    }
     
     
 
