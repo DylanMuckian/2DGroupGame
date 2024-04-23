@@ -23,6 +23,7 @@ public class Boss : MonoBehaviour
     private bool isinChaseRange;
     private bool isinAttackRange;
 
+    AetherRunScript AR;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,8 +32,8 @@ public class Boss : MonoBehaviour
     }
     private void Update()
     {
-        anim.SetBool("canMove", isinChaseRange);
-        anim.SetBool("Attacking", isinAttackRange);
+        anim.SetBool("IsMoving", isinChaseRange);
+        anim.SetBool("IsAttacking", isinAttackRange);
         isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
         isinAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatisPlayer);
 
@@ -50,15 +51,25 @@ public class Boss : MonoBehaviour
         }
 
         LastfacingRight = facingRight;
-    }
-    private void FixedUpdate()
-    {
-       
-        if (isinAttackRange)
+
+        if (isinChaseRange)
         {
-            rb.velocity = Vector2.zero;
+            AR.canMove = true;
         }
+
+        //if (isinAttackRange)
+       // {
+            //anim.SetBool("IsAttacking", true);
+
+       // }
+       // else
+       // {
+            //anim.SetBool("IsAttacking", false);
+       // }
+
+        
     }
+  
 
   
 

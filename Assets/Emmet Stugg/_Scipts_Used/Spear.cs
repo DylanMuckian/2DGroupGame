@@ -29,5 +29,11 @@ public class Spear : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
+
+        //play sound when enemy gets hit
+       // if (collision.gameObject.CompareTag("Enemy"))
+       // {
+           
+       // }
     }
 }

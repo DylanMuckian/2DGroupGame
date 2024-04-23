@@ -42,6 +42,7 @@ public class Dialogue : MonoBehaviour
         // {
         //     contButton.SetActive(true);
         // }
+      
     }
 
     public void zeroText()
@@ -100,7 +101,7 @@ public class Dialogue : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
             AS.canMove = false;
-            playerController.LockMovement();
+            GetComponent<PlayerController>().LockMovement();
         }
     }
     public void OnTriggerExit2D(Collider2D other) 
@@ -110,9 +111,10 @@ public class Dialogue : MonoBehaviour
             playerIsClose = false;
             zeroText();
             AS.canMove = true;
-            playerController.UnlockMovement();
+           
         }
     }
+
     
     
     

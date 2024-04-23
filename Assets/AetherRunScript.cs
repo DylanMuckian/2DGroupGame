@@ -7,7 +7,7 @@ using UnityEngine;
 public class AetherRunScript : StateMachineBehaviour
 {
     public float speed = 1f;
-    public bool canMove = false;
+    public bool canMove = true;
 
     Transform player;
     Rigidbody2D rb;

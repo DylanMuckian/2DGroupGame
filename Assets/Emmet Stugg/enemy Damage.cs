@@ -21,24 +21,17 @@ public class Enemy_Damage : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().health -= damage;
             player = other.gameObject;
+            player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             Debug.Log("trigger entered");
+            //put player hit sound into here.
         }
     }
-    private void Update()
+    private void OnTriggerExit2D(Collider2D col)
     {
-        Dead();
-    }
-    public void Dead()
-    {
-
-        if (pHealth.health <= 0f)
+        if (col.CompareTag("Player"))
         {
-            Debug.Log("dead: " + pHealth.health);
-            Destroy(player);
-            SceneManager.LoadScene(spawn);
+            player.GetComponent<SpriteRenderer>().color =Color.white;
         }
-
-
-    }
+    }   
 }
 
