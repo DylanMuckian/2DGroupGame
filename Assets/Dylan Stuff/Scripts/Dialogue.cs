@@ -101,7 +101,7 @@ public class Dialogue : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
             AS.canMove = false;
-            GetComponent<PlayerController>().LockMovement();
+            
         }
     }
     public void OnTriggerExit2D(Collider2D other) 

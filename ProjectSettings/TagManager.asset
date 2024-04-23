@@ -16,6 +16,7 @@ TagManager:
   - Sword
   - Spear
   - Amulet
+  - Dialogue
   layers:
   - Default
   - TransparentFX

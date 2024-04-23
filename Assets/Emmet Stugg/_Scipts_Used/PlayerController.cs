@@ -154,5 +154,9 @@ public class PlayerController : MonoBehaviour
             canDash = true;
             Destroy(gameObject);
         }
+        if (other.CompareTag("Diologue"))
+        {
+            LockMovement();
+        }
     }
 }
