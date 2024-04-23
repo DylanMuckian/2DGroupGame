@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dialogue : MonoBehaviour
+public class _Dialogue : MonoBehaviour
 {
     /// <summary>
     /// setting to make dialog happen once or repeat
@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
     public bool oneShot = false;
 
     AetherRunScript AS;
-    PlayerController playerController;
+    
 
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -86,10 +86,10 @@ public class Dialogue : MonoBehaviour
         
         
         // else
-        // {
-        //     zeroText();
-        //     dialoguePanel.SetActive(false);
-        //     contButton.SetActive(false);
+       // {
+            // zeroText();
+            // dialoguePanel.SetActive(false);
+            // contButton.SetActive(false);
         // }
     }
 
