@@ -64,6 +64,17 @@ public class MenuController : MonoBehaviour
         StartCoroutine(confirmationBox());
     }
 
+    public void ResetButton(string MenuType)
+    {
+        if(MenuType == "Audio")
+        {
+            AudioListener.volume = defaultVolume;
+            volumeSlider.value = defaultVolume;
+            volumeTextValue.text = defaultVolume.ToString("0.0");
+            VolumeApply();
+        }
+    }
+
     public IEnumerator confirmationBox() 
     { 
         confirmationPromt.SetActive(true);
