@@ -15,6 +15,7 @@ TagManager:
   - Club
   - Sword
   - Spear
+  - Amulet
   layers:
   - Default
   - TransparentFX
