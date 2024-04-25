@@ -32,7 +32,15 @@ public class BossHealth : MonoBehaviour
     public float health = 1;
     private void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f); 
+        }
+        else
+        {
+            print("Health Bar not set in the inspector");
+        }
+        
 
       //if (AR.canMove == true)
       // {
