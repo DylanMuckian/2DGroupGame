@@ -9,7 +9,7 @@ public class BossHealth : MonoBehaviour
     public Image healthBar;
     public Image healthBorder;
     public float maxHealth = 500;
-    AetherRunScript AR;
+   
     public float Health
     {
         set
@@ -30,8 +30,9 @@ public class BossHealth : MonoBehaviour
     }
 
     public float health = 1;
-    private void Update()
+    public void Update()
     {
+<<<<<<< Updated upstream
         if (healthBar != null)
         {
             healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f); 
@@ -47,6 +48,11 @@ public class BossHealth : MonoBehaviour
             //healthBar.gameObject.SetActive(true);
          // healthBorder.gameObject.SetActive(true);
        // }
+=======
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
+       
+      
+>>>>>>> Stashed changes
         if (health <= 250)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);

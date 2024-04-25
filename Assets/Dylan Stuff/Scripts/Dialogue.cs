@@ -115,7 +115,7 @@ public class _Dialogue : MonoBehaviour
         }
     }
 
-    private void DialogueComplete()
+    public void DialogueComplete()
     {
         Debug.Log("Something");
         PlayerController.Instance.UnlockMovement();

@@ -47,10 +47,19 @@ public class Boss : MonoBehaviour
 
         if (facingRight != LastfacingRight)
         {
-
-            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            GetComponent<SpriteRenderer>().flipX = false;
+         
         }
 
+        if(facingRight== true)
+        {
+            anim.SetBool("FacingLeft",false);
+        }
+        if (facingRight == false)
+        {
+            anim.SetBool("FacingLeft",true);
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         LastfacingRight = facingRight;
 
         if (isinChaseRange)
@@ -58,7 +67,9 @@ public class Boss : MonoBehaviour
             anim.SetBool("IsMoving", true);
         }
 
-       
+      
+
+
 
         
     }

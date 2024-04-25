@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class LazerBoss : MonoBehaviour
@@ -8,7 +10,7 @@ public class LazerBoss : MonoBehaviour
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
     Transform m_transform;
-
+    public float damage;
 
 
     private void Awake()
@@ -26,12 +28,13 @@ public class LazerBoss : MonoBehaviour
         {
             RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
             Draw2DRay(laserFirePoint.position, _hit.point);
-
+            
         }
         else
         {
             Draw2DRay(laserFirePoint.position,laserFirePoint.transform.right * defDinstancRay);
         }
+       
     }
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
@@ -39,5 +42,11 @@ public class LazerBoss : MonoBehaviour
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
     }
-    
+   private void checkHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
+    {
+        if (hitInfo.collider.gameObject.tag == "Player")
+        {
+            GetComponent<PlayerHealth>().health -= damage;
+        }
+    }
 }

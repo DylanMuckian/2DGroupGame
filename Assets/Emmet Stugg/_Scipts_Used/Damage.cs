@@ -23,11 +23,16 @@ public class Damage : MonoBehaviour
             Debug.Log("HIT");
             // Deal damage to the enemy
             Enemy enemy = other.GetComponent<Enemy>();
+            BossHealth boss = other.GetComponent<BossHealth>();
 
             if (enemy != null)
             {
                 enemy.Health -= damage;
                 EnemyHitAnim();
+            }
+            if (boss != null)
+            {
+                boss.Health -= damage;
             }
         }
     }
