@@ -26,12 +26,16 @@ public class PlayerController : MonoBehaviour
 
 
     public float activeMovespeed;
-    public float dashSpeed;
+    public float dashSpeed = 10f;
 
     public float dashLength = 0.5f, dashCooldown = 1.0f;
     private bool canDash = false;
     private float dashCounter;
     private float dashCoolCounter;
+
+    public GameObject amulet;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
                {
                 activeMovespeed = dashSpeed;
                 dashCounter = dashLength;
+                StartCoroutine(DashCooldown());
                }
             }
         }
@@ -158,7 +163,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Amulet"))
         {
             canDash = true;
-            Destroy(gameObject);
+            Destroy(amulet);
         }
         if (other.CompareTag("Dialogue"))
         {
@@ -166,4 +171,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
     }
+
+    IEnumerator DashCooldown() 
+    {
+        yield return new WaitForSeconds(3);
+    }
+    
 }
