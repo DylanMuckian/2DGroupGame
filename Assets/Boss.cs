@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -54,15 +55,12 @@ public class Boss : MonoBehaviour
 
         if (isinChaseRange)
         {
-            AR.canMove = true;
+            anim.SetBool("IsMoving", true);
         }
 
        
 
         
     }
-  
-
-  
 
 }

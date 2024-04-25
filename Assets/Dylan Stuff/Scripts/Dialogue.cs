@@ -11,7 +11,7 @@ public class _Dialogue : MonoBehaviour
     /// </summary>
     public bool oneShot = false;
 
-    // AetherRunScript AS;
+    Animator anim;
     
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -100,8 +100,8 @@ public class _Dialogue : MonoBehaviour
             playerIsClose = true;
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
-           // AS.canMove = false;
             
+            anim.SetBool("IsMoving",false);
         }
     }
     public void OnTriggerExit2D(Collider2D other) 
@@ -110,7 +110,7 @@ public class _Dialogue : MonoBehaviour
         {
             playerIsClose = false;
             zeroText();
-            //AS.canMove = true;
+            
            
         }
     }
@@ -119,7 +119,7 @@ public class _Dialogue : MonoBehaviour
     {
         Debug.Log("Something");
         PlayerController.Instance.UnlockMovement();
-
+        anim.SetBool("IsMoving", true);   
     }
     
     
