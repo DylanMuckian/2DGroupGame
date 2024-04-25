@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
     Animator animator;
-
+    public Image healthBar;
+    public Image healthBorder;
+    public float maxHealth = 500;
+    AetherRunScript AR;
     public float Health
     {
         set
         {
             health = value;
-            if (health <= 250)
-            {
-                GetComponent<Animator>().SetBool("isEnraged", true);
-            }
+            
             if (health <= 0)
             {
                 Defeated();
@@ -29,7 +30,33 @@ public class BossHealth : MonoBehaviour
     }
 
     public float health = 1;
+    private void Update()
+    {
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f); 
+        }
+        else
+        {
+            print("Health Bar not set in the inspector");
+        }
+        
 
+      //if (AR.canMove == true)
+      // {
+            //healthBar.gameObject.SetActive(true);
+         // healthBorder.gameObject.SetActive(true);
+       // }
+        if (health <= 250)
+        {
+            GetComponent<Animator>().SetBool("isEnraged", true);
+        }
+        if(health <= 0)
+        {
+            healthBar.gameObject.SetActive(false);
+            healthBorder.gameObject.SetActive(false);
+        }
+    }
 
     private void Start()
     {

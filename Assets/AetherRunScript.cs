@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class AetherRunScript : StateMachineBehaviour
 {
+
+   
     public float speed = 1f;
-    public bool canMove = true;
+    
+    
 
     Transform player;
     Rigidbody2D rb;
@@ -22,13 +25,14 @@ public class AetherRunScript : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
       
-        if (canMove) 
-        {
+        
+        
+        
             Vector2 target = new Vector3 (player.position.x,player.position.y, rb.position.y);
          Vector2 newPos =Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
 
           rb.MovePosition(newPos); 
-        }
+        
         
     }
 
