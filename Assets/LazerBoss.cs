@@ -11,8 +11,13 @@ public class LazerBoss : MonoBehaviour
     public LineRenderer m_lineRenderer;
     Transform m_transform;
     public float damage;
+    
+    //this for doing DPS instead of damage at the speed of update
+    public float damagePerSecondRate = 0.5f;
+    private float damageTimer = 0;
 
-
+    public bool hitPlayer;
+    
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -24,11 +29,13 @@ public class LazerBoss : MonoBehaviour
     }
     void ShootLaser()
     {
+        RaycastHit2D hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
+        
         if (Physics2D.Raycast(m_transform.position, transform.right))
         {
-            RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
-            Draw2DRay(laserFirePoint.position, _hit.point);
             
+            Draw2DRay(laserFirePoint.position, hit.point);
+            checkHit(hit, transform.right, m_lineRenderer);
         }
         else
         {
@@ -42,11 +49,20 @@ public class LazerBoss : MonoBehaviour
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
     }
-   private void checkHit(RaycastHit hitInfo, Vector3 direction, LineRenderer laser)
+    private void checkHit(RaycastHit2D hitInfo, Vector3 direction, LineRenderer laser)
     {
         if (hitInfo.collider.gameObject.tag == "Player")
         {
-            GetComponent<PlayerHealth>().health -= damage;
+            //hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
+            Debug.Log("Player Hit BY BOSS LAZER");
+            
+            //damage per second timer
+            damageTimer += Time.deltaTime;
+            if (damageTimer >= damagePerSecondRate)
+            {
+                hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
+                damageTimer = 0;
+            }
         }
     }
 }
