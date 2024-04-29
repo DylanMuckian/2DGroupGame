@@ -10,7 +10,7 @@ public class BossHealth : MonoBehaviour
     public Image healthBorder;
     public float maxHealth = 500;
     public GameObject Amulet;
-
+    public GameObject Door;
     Boss bossH;
     public float Health
     {
@@ -71,7 +71,7 @@ public class BossHealth : MonoBehaviour
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
-
+        Destroy(Door.gameObject);
     }
     public void Beginning()
     {

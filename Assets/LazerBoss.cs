@@ -55,14 +55,14 @@ public class LazerBoss : MonoBehaviour
         {
             //hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
             Debug.Log("Player Hit BY BOSS LAZER");
-            
+            hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
             //damage per second timer
-            damageTimer += Time.deltaTime;
-            if (damageTimer >= damagePerSecondRate)
-            {
-                hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
-                damageTimer = 0;
-            }
+            //damageTimer += Time.deltaTime;
+           //if (damageTimer >= damagePerSecondRate)
+           // {
+               // hitInfo.collider.gameObject.GetComponent<PlayerHealth>().health -= damage;
+              //  damageTimer = 0;
+           // }
         }
     }
 }
