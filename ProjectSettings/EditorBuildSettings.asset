@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: b07fd922e1b46ae4a89808243210c985
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Emmet.unity
+    guid: d7c4803cfb002ec46897ccd907dfdd4e
   m_configObjects: {}
