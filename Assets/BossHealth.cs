@@ -9,7 +9,9 @@ public class BossHealth : MonoBehaviour
     public Image healthBar;
     public Image healthBorder;
     public float maxHealth = 500;
-   
+    public GameObject Amulet;
+
+    Boss bossH;
     public float Health
     {
         set
@@ -32,7 +34,7 @@ public class BossHealth : MonoBehaviour
     public float health = 1;
     public void Update()
     {
-<<<<<<< Updated upstream
+
         if (healthBar != null)
         {
             healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f); 
@@ -43,24 +45,20 @@ public class BossHealth : MonoBehaviour
         }
         
 
-      //if (AR.canMove == true)
-      // {
-            //healthBar.gameObject.SetActive(true);
-         // healthBorder.gameObject.SetActive(true);
-       // }
-=======
+
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
        
       
->>>>>>> Stashed changes
+
         if (health <= 250)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
         }
-        if(health <= 0)
+        if (health <= 0)
         {
             healthBar.gameObject.SetActive(false);
             healthBorder.gameObject.SetActive(false);
+            Amulet.gameObject.SetActive(true);
         }
     }
 
@@ -75,6 +73,10 @@ public class BossHealth : MonoBehaviour
         animator.SetTrigger("Defeated");
 
     }
+    public void Beginning()
+    {
+        healthBar.gameObject.SetActive(true);
+         healthBorder.gameObject.SetActive(true);
+    }
 
-  
 }
