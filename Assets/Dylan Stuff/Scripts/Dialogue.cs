@@ -101,6 +101,7 @@ public class _Dialogue : MonoBehaviour
             dialoguePanel.SetActive(true);
             StartCoroutine(Typing());
             
+            anim = other.GetComponent<Animator>();
             anim.SetBool("IsMoving",false);
         }
     }
