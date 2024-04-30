@@ -31,7 +31,7 @@ public class Spear_Throw : MonoBehaviour
             timer = coolDown;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
 
             if (timer == coolDown)
