@@ -15,7 +15,12 @@ public class BossHealth : MonoBehaviour
     public GameObject Amulet;
     public GameObject Door;
     public GameObject Exit;
+    public GameObject potion;
     Boss bossH;
+    private void Awake()
+    {
+        Instance = this;
+    }
     public float Health
     {
         set
@@ -60,7 +65,7 @@ public class BossHealth : MonoBehaviour
         if (health <= 250)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
-            bossH.attackRadius = 2.5f;
+            GetComponent<Boss>().Enraged();
         }
      
     }
@@ -79,6 +84,7 @@ public class BossHealth : MonoBehaviour
         Destroy(Exit.gameObject);
         Destroy(healthBar);
         Destroy(healthBorder);
+        potion.gameObject.SetActive(true);
     }
     public void Beginning()
     {

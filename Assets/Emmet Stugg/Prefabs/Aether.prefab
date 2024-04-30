@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3601965172621010200
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1524787492482711545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49,6 +49,8 @@ MonoBehaviour:
   defDinstancRay: 100
   laserFirePoint: {fileID: 6081321956410311208}
   m_lineRenderer: {fileID: 8593656975296996988}
+  damage: 0.5
+  hitPlayer: 0
 --- !u!120 &8593656975296996988
 LineRenderer:
   serializedVersion: 2
@@ -206,9 +208,9 @@ GameObject:
   - component: {fileID: 8524868221217442610}
   - component: {fileID: 1686607535657941941}
   - component: {fileID: 1980413613918796022}
-  - component: {fileID: 4179869524372921097}
   - component: {fileID: 8716661984214912234}
   - component: {fileID: 1886424963375752726}
+  - component: {fileID: 8863547119723013437}
   m_Layer: 0
   m_Name: Aether
   m_TagString: Enemy
@@ -367,26 +369,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.041478734, y: -0.0941876}
   m_Size: {x: 0.41929677, y: 0.5399311}
   m_Direction: 0
---- !u!114 &4179869524372921097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6579319168007199858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a603680282c45734eac98bdac3f5e93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkRadius: 5
-  attackRadius: 1
-  facingRight: 1
-  LastfacingRight: 1
-  WhatisPlayer:
-    serializedVersion: 2
-    m_Bits: 8
-  dir: {x: 0, y: 0, z: 0}
 --- !u!114 &8716661984214912234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +384,10 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   healthBorder: {fileID: 0}
   maxHealth: 500
+  Amulet: {fileID: 0}
+  Door: {fileID: 0}
+  Exit: {fileID: 0}
+  potion: {fileID: 0}
   health: 500
 --- !u!114 &1886424963375752726
 MonoBehaviour:
@@ -417,3 +403,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pHealth: {fileID: 0}
   damage: 20
+--- !u!114 &8863547119723013437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579319168007199858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a603680282c45734eac98bdac3f5e93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkRadius: 6
+  attackRadius: 0
+  facingRight: 1
+  LastfacingRight: 1
+  WhatisPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  dir: {x: 0, y: 0, z: 0}

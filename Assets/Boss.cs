@@ -7,8 +7,8 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     // this scripts is to flip the sprite when player switchs sides of boss
-    public float checkRadius;
-    public float attackRadius;
+     private float checkRadius = 6;
+     private float attackRadius = 2f;
 
     public bool facingRight = true;
     public bool LastfacingRight = true;
@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
     public LayerMask WhatisPlayer;
 
     private Transform target;
-    private Rigidbody2D rb;
+   
     private Animator anim;
     private Vector2 movement;
     public Vector3 dir;
@@ -24,10 +24,10 @@ public class Boss : MonoBehaviour
     private bool isinChaseRange;
     private bool isinAttackRange;
 
-    AetherRunScript AR;
+    
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+       
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
     }
@@ -35,7 +35,7 @@ public class Boss : MonoBehaviour
     {
         anim.SetBool("IsMoving", isinChaseRange);
         anim.SetBool("IsAttacking", isinAttackRange);
-        isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
+         isinChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, WhatisPlayer);
         isinAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, WhatisPlayer);
 
         dir = target.position - transform.position;
@@ -66,12 +66,16 @@ public class Boss : MonoBehaviour
         {
             anim.SetBool("IsMoving", true);
         }
-
       
 
 
 
         
+    }
+    public void Enraged()
+    {
+        attackRadius = 4;
+        Debug.Log("Enraged");
     }
 
 }
