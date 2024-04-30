@@ -9,6 +9,7 @@ public class Healing : MonoBehaviour
     Collider2D colider;
     public PlayerHealth pHealth;
     public float healing;
+    public GameObject bottle;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +18,7 @@ public class Healing : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().health += healing;
             Debug.Log("trigger entered");
+            Destroy(bottle);
         }
     }
 
