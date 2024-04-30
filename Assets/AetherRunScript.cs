@@ -8,7 +8,7 @@ public class AetherRunScript : StateMachineBehaviour
 {
 
    
-    public float speed = 1f;
+    public float speed = 2f;
     
     
 
