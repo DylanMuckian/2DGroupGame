@@ -77,8 +77,6 @@ public class BossHealth : MonoBehaviour
         Destroy(Door.gameObject);
         Amulet.gameObject.SetActive(true);
         Destroy(Exit.gameObject);
-        Destroy(healthBar.gameObject);
-        Destroy(healthBorder.gameObject);
     }
     public void Beginning()
     {
