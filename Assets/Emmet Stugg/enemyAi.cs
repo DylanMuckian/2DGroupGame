@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class aiMove : MonoBehaviour
 {
@@ -23,11 +24,13 @@ public class aiMove : MonoBehaviour
     private bool isinChaseRange;
     private bool isinAttackRange;
 
+    public GameObject healthbar;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        target = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("Player").transform;  
     }
     private void Update()
     {
@@ -55,8 +58,13 @@ public class aiMove : MonoBehaviour
     {
         if (isinChaseRange && !isinAttackRange)
         {
-           
+
             MoveChracter(movement);
+            EnabledHealthbar();
+        }
+        else 
+        { 
+            DisableHealthbar();
         }
         if (isinAttackRange)
         {
@@ -67,6 +75,18 @@ public class aiMove : MonoBehaviour
     private void MoveChracter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+
+    }
+
+    private void EnabledHealthbar() 
+    { 
+
+        healthbar.SetActive(true);
+    }
+
+    private void DisableHealthbar()
+    { 
+        healthbar.SetActive(false); 
     }
 
 }
