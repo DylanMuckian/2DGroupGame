@@ -52,7 +52,10 @@ public class BossHealth : MonoBehaviour
 
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0.0f, 1.0f);
        
-      
+      if (health < maxHealth)
+        {
+            Beginning();
+        }
 
         if (health <= 250)
         {

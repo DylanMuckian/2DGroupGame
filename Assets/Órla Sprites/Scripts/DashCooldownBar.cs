@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DashCoolDownBar : MonoBehaviour
 {
-    private Image barImage;
+    public Image barImage;
     private Mana mana;
 
     private bool canMana = false;
