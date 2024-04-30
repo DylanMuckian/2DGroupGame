@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     Animator animator;
-    
+   
     public float Health
     {
         set
@@ -25,12 +26,13 @@ public class Enemy : MonoBehaviour
     }
 
     public float health = 1;
-
-
+    
+ 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
+   
 
 
     public void Defeated()

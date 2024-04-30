@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Enemy_Damage : MonoBehaviour
 
 {
-    private int spawn = 0;
+    
     public PlayerHealth pHealth;
     public float damage = 20;
 

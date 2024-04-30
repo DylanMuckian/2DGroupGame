@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7824bf498edf05f4499bfdb2aed705ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 100
   health: 100
 --- !u!70 &8248378746659289108
 CapsuleCollider2D:
