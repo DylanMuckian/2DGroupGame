@@ -15,9 +15,20 @@ public class PlayerHealth : MonoBehaviour
     public float health = 100;
     public float maxHealth = 100;
     public Image healthbar;
+   
     public bool isDead;
     Animator animator;
     PlayerController playerController;
+
+    private AudioClip deathSound;
+    private AudioSource audioSource;
+    public GameObject audioMngr;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         col = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
+        deathSound = (AudioClip)Resources.Load("Church Bell");
     }
 
     // Update is called once per frame
@@ -40,6 +52,9 @@ public class PlayerHealth : MonoBehaviour
         {
             animator.SetBool("IsDead", true);
             playerController.enabled = false;
+            audioSource.clip = deathSound;
+            audioSource.Play();
+
         }
         else 
         {
