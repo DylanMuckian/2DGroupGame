@@ -13,8 +13,8 @@ public class LazerBoss : MonoBehaviour
     public float damage;
     
     //this for doing DPS instead of damage at the speed of update
-    public float damagePerSecondRate = 0.5f;
-    private float damageTimer = 0;
+    //public float damagePerSecondRate = 0.5f;
+   // private float damageTimer = 0;
 
     public bool hitPlayer;
     

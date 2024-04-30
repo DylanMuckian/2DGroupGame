@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
+
+    public static BossHealth Instance;
+
     Animator animator;
     public Image healthBar;
     public Image healthBorder;
     public float maxHealth = 500;
     public GameObject Amulet;
     public GameObject Door;
+    public GameObject Exit;
     Boss bossH;
     public float Health
     {
@@ -53,13 +57,9 @@ public class BossHealth : MonoBehaviour
         if (health <= 250)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
+            bossH.attackRadius = 2.5f;
         }
-        if (health <= 0)
-        {
-            healthBar.gameObject.SetActive(false);
-            healthBorder.gameObject.SetActive(false);
-            Amulet.gameObject.SetActive(true);
-        }
+     
     }
 
     private void Start()
@@ -72,11 +72,15 @@ public class BossHealth : MonoBehaviour
     {
         animator.SetTrigger("Defeated");
         Destroy(Door.gameObject);
+        Amulet.gameObject.SetActive(true);
+        Destroy(Exit.gameObject);
     }
     public void Beginning()
     {
         healthBar.gameObject.SetActive(true);
          healthBorder.gameObject.SetActive(true);
+        Exit.gameObject.SetActive(true);
+
     }
 
 }
