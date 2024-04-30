@@ -10,8 +10,12 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Slider healthSlider;
     
+=======
+   
+>>>>>>> 7f24c6a4da7f73b6c19f554b93791f5e00782ee2
 =======
    
 >>>>>>> 7f24c6a4da7f73b6c19f554b93791f5e00782ee2
@@ -42,6 +46,9 @@ public class Enemy : MonoBehaviour
     public float health = 1;
     
  
+<<<<<<< HEAD
+>>>>>>> 7f24c6a4da7f73b6c19f554b93791f5e00782ee2
+=======
 >>>>>>> 7f24c6a4da7f73b6c19f554b93791f5e00782ee2
     private void Start()
     {
