@@ -55,6 +55,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         PlaySFX(sfx);
+
     }
     
 }
