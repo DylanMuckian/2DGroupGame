@@ -7,8 +7,8 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     // this scripts is to flip the sprite when player switchs sides of boss
-     private float checkRadius = 6;
-     private float attackRadius = 2f;
+     private float checkRadius = 6.5f;
+     private float attackRadius = 1.5f;
 
     public bool facingRight = true;
     public bool LastfacingRight = true;
@@ -24,7 +24,10 @@ public class Boss : MonoBehaviour
     private bool isinChaseRange;
     private bool isinAttackRange;
 
-    
+    public AudioSource source;
+    public AudioClip charge;
+    public AudioClip fire;
+
     private void Start()
     {
        
@@ -74,8 +77,15 @@ public class Boss : MonoBehaviour
     }
     public void Enraged()
     {
-        attackRadius = 4;
+        attackRadius = 5;
         Debug.Log("Enraged");
     }
-
+    public void Charge()
+    {
+        source.PlayOneShot(charge);
+    }
+    public void Fire()
+    {
+        source.PlayOneShot(fire);
+    }
 }
