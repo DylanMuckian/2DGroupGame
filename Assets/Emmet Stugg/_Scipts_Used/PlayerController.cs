@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
 
+    public TrailRenderer tr;
+    
     public GameObject amulet;
 
 
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
         activeMovespeed = moveSpeed;
+        //tr.emitting = false;
     }
     private void Update()
     {
@@ -56,9 +59,11 @@ public class PlayerController : MonoBehaviour
             {
                if(dashCoolCounter <=0 && dashCounter <= 0)
                {
-                activeMovespeed = dashSpeed;
-                dashCounter = dashLength;
-                StartCoroutine(DashCooldown());
+                    activeMovespeed = dashSpeed;
+                    dashCounter = dashLength;
+                    StartCoroutine(Trail());
+                    StartCoroutine(DashCooldown());
+
                }
             }
         }
@@ -176,5 +181,14 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
     }
-    
+
+    IEnumerator Trail()
+    {
+        tr.emitting = true;
+        yield return new WaitForSeconds(1);
+        tr.emitting = false; 
+    }
+
+
+
 }
