@@ -12,6 +12,9 @@ public class Spear_Throw : MonoBehaviour
     //[Range(0.1f, 1f)]
     //[SerializeField] private float fireRate = 0.5f;
 
+    public AudioSource source;
+    public AudioClip clip;
+
     private Vector2 mousePos;
 
     public float coolDown = 0.5f;
@@ -50,6 +53,7 @@ public class Spear_Throw : MonoBehaviour
         {
             Instantiate(spearPrefab, firingPoint.position, firingPoint.rotation);
             timer = 0;
+            source.PlayOneShot(clip);
         }
 
     }

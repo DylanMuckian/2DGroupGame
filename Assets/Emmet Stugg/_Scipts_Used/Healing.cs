@@ -10,7 +10,8 @@ public class Healing : MonoBehaviour
     public PlayerHealth pHealth;
     public float healing;
     public GameObject bottle;
-
+    public AudioSource source;
+    public AudioClip clip;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -19,6 +20,7 @@ public class Healing : MonoBehaviour
             other.gameObject.GetComponent<PlayerHealth>().health += healing;
             Debug.Log("trigger entered");
             Destroy(bottle);
+            source.PlayOneShot(clip);
         }
     }
 
