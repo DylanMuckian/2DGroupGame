@@ -54,6 +54,9 @@ public class PlayerHealth : MonoBehaviour
             playerController.enabled = true;
         }
     }
-
+    public void Dead()
+    {
+        SceneManager.LoadScene(spawn);
+    }
 
 }
