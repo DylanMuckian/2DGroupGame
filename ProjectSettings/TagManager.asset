@@ -17,6 +17,7 @@ TagManager:
   - Spear
   - Amulet
   - Dialogue
+  - musicVolume
   layers:
   - Default
   - TransparentFX
