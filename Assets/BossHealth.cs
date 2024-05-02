@@ -16,7 +16,10 @@ public class BossHealth : MonoBehaviour
     public GameObject Door;
     public GameObject Exit;
     public GameObject potion;
+    public GameObject diologue;
     Boss bossH;
+
+   
     private void Awake()
     {
         Instance = this;
@@ -66,6 +69,7 @@ public class BossHealth : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
             GetComponent<Boss>().Enraged();
+            
         }
      
     }
@@ -91,6 +95,7 @@ public class BossHealth : MonoBehaviour
         healthBar.gameObject.SetActive(true);
          healthBorder.gameObject.SetActive(true);
         Exit.gameObject.SetActive(true);
+        Destroy(diologue);
 
     }
 

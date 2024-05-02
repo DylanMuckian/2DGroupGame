@@ -177,3 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+  sr: {fileID: 0}
+  animator: {fileID: 0}
+  source: {fileID: 0}
+  hit: {fileID: 8300000, guid: 68e60d6cc91012749bb553b3008b3273, type: 3}

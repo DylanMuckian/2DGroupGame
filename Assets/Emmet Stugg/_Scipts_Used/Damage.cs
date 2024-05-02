@@ -7,6 +7,8 @@ public class Damage : MonoBehaviour
     public int damage;
     public SpriteRenderer sr;
     public Animator animator;
+    public AudioSource source;
+    public AudioClip hit;
 
     // Start is called before the first frame update
     public void Start()
@@ -24,15 +26,17 @@ public class Damage : MonoBehaviour
             // Deal damage to the enemy
             Enemy enemy = other.GetComponent<Enemy>();
             BossHealth boss = other.GetComponent<BossHealth>();
-
+            
             if (enemy != null)
             {
                 enemy.Health -= damage;
                 EnemyHitAnim();
+                source.PlayOneShot(hit);
             }
             if (boss != null)
             {
                 boss.Health -= damage;
+                source.PlayOneShot(hit);
             }
         }
     }
